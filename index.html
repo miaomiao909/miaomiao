@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026骏马迎春·福满人间</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #8b0000 0%, #b22222 30%, #cd5c5c 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            background-attachment: fixed;
+        }
+        
+        /* 金色纹理背景 */
+        .gold-texture-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 60%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffd700' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        /* 节日装饰元素 */
+        .festival-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .decoration-item {
+            position: absolute;
+            opacity: 0.3;
+            transition: all 8s ease-in-out infinite;
+        }
+        
+        .lantern {
+            width: 80px;
+            height: 100px;
+            background: radial-gradient(circle at 30% 30%, #ffd700, #ff6b00);
+            border-radius: 40px 40px 15px 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .lantern:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 35px;
+            width: 10px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 5px;
+        }
+        
+        .lantern:before {
+            content: '福';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #8b0000;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .firework {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, #ffd700, #ff6b00);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.5);
+        }
+        
+        .coin {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle at 30% 30%, #ffd700, #b8860b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #8b0000;
+            font-weight: bold;
+        }
+        
+        .chinese-font {
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        /* 节日标题 */
+        .festival-title {
+            font-size: 4rem;
+            background: linear-gradient(90deg, #ffd700 0%, #ffa500 50%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .festival-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 6px;
+            background: linear-gradient(90deg, #ffd700 0%, #ffa500 100%);
+            border-radius: 3px;
+            box-shadow: 0 3px 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .page-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #ffefba;
+            max-width: 90%;
+            line-height: 1.6;
+            font-weight: 300;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 节日卡片设计 */
+        .festival-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 0 0 2px rgba(255, 215, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            margin: 20px auto;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .festival-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .festival-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 0 3px rgba(255, 215, 0, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* 页面容器 */
+        .page-container {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            padding-bottom: 80px;
+        }
+        
+        .page-container.active {
+            display: flex;
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 节日红包样式 */
+        .festival-envelope {
+            width: 350px;
+            height: 450px;
+            position: relative;
+            cursor: pointer;
+            margin: 30px auto;
+            perspective: 1500px;
+        }
+        
+        .envelope-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .festival-envelope:hover .envelope-inner {
+            transform: rotateY(15deg) rotateX(5deg);
+        }
+        
+        .festival-envelope.open .envelope-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .envelope-front, .envelope-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+        
+        .envelope-front {
+            background: linear-gradient(145deg, #b22222 0%, #dc143c 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(178, 34, 34, 0.4);
+        }
+        
+        .envelope-back {
+            background: linear-gradient(145deg, #ffd700 0%, #ffa500 100%);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+        }
+        
+        .envelope-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.6;
+        }
+        
+        .envelope-icon {
+            font-size: 7rem;
+            margin-bottom: 20px;
+            color: rgba(255, 215, 0, 0.95);
+            text-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .money-amount {
+            font-size: 5.5rem;
+            font-weight: 900;
+            color: #b22222;
+            margin: 20px 0;
+            text-shadow: 3px 3px 0 #ffd700, 6px 6px 0 rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* 摇新年签样式 */
+        .fortune-stick-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 40px auto;
+            perspective: 1000px;
+        }
+        
+        .fortune-stick {
+            position: absolute;
+            width: 60px;
+            height: 300px;
+            background: linear-gradient(to bottom, #8b4513, #a0522d);
+            border-radius: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .fortune-stick::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(to bottom, #ffd700, #ffa500);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .fortune-stick::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(to top, #8b4513, #a0522d);
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .fortune-stick:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .fortune-stick.shaking {
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(-50%) rotate(0deg); }
+            25% { transform: translateX(-50%) rotate(5deg); }
+            50% { transform: translateX(-50%) rotate(-5deg); }
+            75% { transform: translateX(-50%) rotate(5deg); }
+        }
+        
+        .fortune-stick-out {
+            animation: stickOut 1s forwards;
+        }
+        
+        @keyframes stickOut {
+            0% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-50px); }
+            100% { transform: translateX(-50%) translateY(-100px); }
+        }
+        
+        .fortune-stick-text {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #ffd700;
+            font-size: 1.2rem;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 5px;
+            z-index: 1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .fortune-vase {
+            position: absolute;
+            width: 150px;
+            height: 180px;
+            background: linear-gradient(to bottom, #b8860b, #8b4513);
+            border-radius: 50% 50% 20px 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .fortune-vase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(to bottom, #ffd700, #ffa500);
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .fortune-vase::after {
+            content: '签';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.2);
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        /* 节日图片展示区域 */
+        .festival-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 215, 0, 0.7);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(139, 0, 0, 0.9), transparent);
+            padding: 20px;
+            color: #ffd700;
+            font-size: 1.3rem;
+            text-align: center;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        /* 美食展示区图片样式 */
+.food-img {
+    width: 60px;    /* 控制图片宽度 */
+    height: 60px;   /* 控制图片高度 */
+    object-fit: cover; /* 保持图片比例，裁剪多余部分 */
+    border-radius: 50%; /* 圆形图片（可选，也可改为方形） */
+    margin-bottom: 10px;
+    border: 2px solid #ffd700; /* 金色边框点缀 */
+}
+
+/* 南北差异区图片样式 */
+.diff-img {
+    width: 80px;    /* 比展示区稍大 */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #ffd700;
+}
+
+/* 适配移动端 */
+@media (max-width: 768px) {
+    .food-img {
+        width: 50px;
+        height: 50px;
+    }
+    .diff-img {
+        width: 70px;
+        height: 70px;
+    }
+}
+        
+        /* 节日祝福墙 */
+        .blessing-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .blessing-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .blessing-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.7);
+        }
+        
+        .blessing-text {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .blessing-author {
+            font-size: 0.9rem;
+            color: #ffefba;
+            text-align: right;
+            font-style: italic;
+        }
+        
+        /* 自定义祝福输入 */
+        .blessing-input {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+        
+        .blessing-textarea {
+            width: 100%;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            border-radius: 15px;
+            padding: 15px;
+            color: white;
+            font-size: 1.1rem;
+            font-family: 'Noto Sans SC', sans-serif;
+            resize: none;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .blessing-textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3), inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 节日时间线样式 */
+        .festival-timeline {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            position: relative;
+        }
+        
+        .festival-timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(to bottom, #ffd700, #ffa500);
+            transform: translateX(-50%);
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        
+        .timeline-item {
+            width: 45%;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 215, 0, 0.7);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), inset 0 2px 5px rgba(255,255,255,0.5);
+            border: 3px solid #b22222;
+        }
+        
+        .timeline-item:nth-child(odd):after {
+            right: -60px;
+        }
+        
+        .timeline-item:nth-child(even):after {
+            left: -60px;
+        }
+        
+        .timeline-title {
+            font-size: 1.6rem;
+            color: #ffd700;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .timeline-item p {
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: #ffefba;
+        }
+        
+        /* 马年特色展示 */
+        .horse-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        
+        .horse-card {
+            width: 280px;
+            height: 350px;
+            perspective: 1500px;
+        }
+        
+        .horse-card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+        }
+        
+        .horse-card:hover .horse-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .horse-card-front, .horse-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+        }
+        
+        .horse-card-front {
+            background: linear-gradient(45deg, #b22222, #dc143c);
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
+        }
+        
+        .horse-card-back {
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            transform: rotateY(180deg);
+            color: #b22222;
+            box-shadow: inset 0 0 30px rgba(178,34,34,0.2);
+        }
+        
+        .horse-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .horse-card:hover .horse-icon {
+            transform: scale(1.1);
+        }
+        
+        .horse-title {
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .horse-desc {
+            font-size: 1.15rem;
+            text-align: center;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        /* 节日倒计时 */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px auto;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .countdown-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        .countdown-label {
+            font-size: 1.2rem;
+            color: #ffefba;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* 节日美食展示 */
+        .food-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        
+        .food-item {
+            text-align: center;
+            width: 200px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .food-item:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 215, 0, 0.7);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.18);
+        }
+        
+        .food-emoji {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+        
+        .food-name {
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .food-desc {
+            font-size: 1rem;
+            color: #ffefba;
+            line-height: 1.4;
+        }
+        
+        /* 导航按钮 */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .festival-btn {
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+            color: #b22222;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(178, 34, 34, 0.3);
+        }
+        
+        .festival-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+        }
+        
+        .festival-btn.secondary {
+            background: linear-gradient(135deg, #b22222 0%, #dc143c 100%);
+            color: #ffd700;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .festival-btn.secondary:hover {
+            background: linear-gradient(135deg, #dc143c 0%, #ff0000 100%);
+        }
+        
+        /* 页面指示器 */
+        .page-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .page-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .page-dot.active {
+            background: #ffd700;
+            transform: scale(1.5);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* 加载动画 */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #8b0000 0%, #b22222 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.8s, visibility 0.8s;
+        }
+        
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-text {
+            font-size: 2.5rem;
+            margin-top: 30px;
+            color: #ffd700;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: 'Ma Shan Zheng', cursive;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .spinner {
+            width: 100px;
+            height: 100px;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: #ffd700;
+            animation: spin 1.2s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .festival-title {
+                font-size: 2.8rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1.3rem;
+                margin-bottom: 30px;
+            }
+            
+            .festival-envelope {
+                width: 300px;
+                height: 400px;
+            }
+            
+            .money-amount {
+                font-size: 4.5rem;
+            }
+            
+            .fortune-stick-container {
+                width: 250px;
+                height: 350px;
+            }
+            
+            .fortune-stick {
+                width: 50px;
+                height: 250px;
+            }
+            
+            .fortune-vase {
+                width: 130px;
+                height: 150px;
+            }
+            
+            .festival-card {
+                padding: 20px;
+            }
+            
+            .blessing-wall {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .festival-timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-item:nth-child(odd):after,
+            .timeline-item:nth-child(even):after {
+                left: -60px;
+            }
+            
+            .horse-card {
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            .countdown-container {
+                gap: 15px;
+            }
+            
+            .countdown-item {
+                min-width: 100px;
+                padding: 15px;
+            }
+            
+            .countdown-number {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .festival-title {
+                font-size: 2.2rem;
+            }
+            
+            .festival-envelope {
+                width: 260px;
+                height: 360px;
+            }
+            
+            .money-amount {
+                font-size: 3.8rem;
+            }
+            
+            .nav-buttons {
+                gap: 15px;
+            }
+            
+            .festival-btn {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+            
+            .page-indicator {
+                gap: 10px;
+            }
+            
+            .page-dot {
+                width: 12px;
+                height: 12px;
+            }
+            
+            .festival-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 金色纹理背景 -->
+    <div class="gold-texture-bg"></div>
+    
+    <!-- 节日装饰元素 -->
+    <div class="festival-decoration" id="festivalDecoration"></div>
+    
+    <!-- 加载动画 -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text chinese-font">2026骏马迎春·福满人间</div>
+    </div>
+    
+    <!-- 页面1：欢迎页 -->
+    <div class="page-container active" id="page1">
+        <h1 class="festival-title chinese-font">2026骏马迎春</h1>
+        <p class="page-subtitle">金马送福·新春吉祥·阖家欢乐</p>
+        
+        <div class="festival-envelope" id="festivalEnvelope">
+            <div class="envelope-inner">
+                <div class="envelope-front">
+                    <div class="envelope-pattern"></div>
+                    <div class="envelope-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 style="font-size: 2rem; color: #ffd700; margin-bottom: 10px; text-shadow: 0 3px 10px rgba(0,0,0,0.3);">马年红包</h3>
+                    <p style="color: rgba(255, 239, 186, 0.9); font-size: 1.2rem;">点击开启2026新春好运</p>
+                </div>
+                <div class="envelope-back">
+                    <div class="money-amount" id="moneyAmount">888</div>
+                    <p style="font-size: 1.5rem; color: #b22222; text-align: center; margin-top: 10px; font-weight: bold;">马到成功<br>万事如意</p>
+                    <div style="font-size: 4rem; margin-top: 20px;">🐎</div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="page-subtitle">开启红包，获取你的2026新年好运与祝福</p>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn" onclick="nextPage()">
+                <i class="fas fa-arrow-right"></i> 开启新春之旅
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot active" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <!-- 页面2：摇新年签 -->
+    <div class="page-container" id="page2">
+        <h1 class="festival-title chinese-font">摇新年签</h1>
+        <p class="page-subtitle">摇一摇，获取你的2026马年运势</p>
+        
+        <div class="fortune-stick-container">
+            <div class="fortune-vase"></div>
+            <div class="fortune-stick" id="fortuneStick">
+                <div class="fortune-stick-text" id="fortuneStickText">点击摇签</div>
+            </div>
+        </div>
+        
+        <div class="festival-card" id="fortuneResult" style="display: none; text-align: center;">
+            <h3 style="font-size: 1.8rem; color: #ffd700; margin-bottom: 15px; text-shadow: 0 3px 10px rgba(0,0,0,0.3);" id="fortuneTitle"></h3>
+            <p style="font-size: 1.2rem; line-height: 1.6; color: #ffefba;" id="fortuneDescription"></p>
+            <div style="font-size: 3.5rem; margin-top: 20px;" id="fortuneEmoji"></div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn secondary" onclick="prevPage()">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <button class="festival-btn" onclick="nextPage()">
+                马年文化 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot active" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <!-- 页面3：马年文化 -->
+    <div class="page-container" id="page3">
+        <h1 class="festival-title chinese-font">马年文化</h1>
+        <p class="page-subtitle">骏马精神与文化传承</p>
+        
+        <div class="horse-showcase">
+            <div class="horse-card">
+                <div class="horse-card-inner">
+                    <div class="horse-card-front">
+                        <div class="horse-icon">
+                            <i class="fas fa-horse"></i>
+                        </div>
+                        <h3 class="horse-title chinese-font">马到成功</h3>
+                        <p class="horse-desc" style="color: #ffefba;">点击翻转了解更多</p>
+                    </div>
+                    <div class="horse-card-back">
+                        <h3 class="horse-title chinese-font">马到成功</h3>
+                        <p class="horse-desc">"马到成功"寓意事情一开始就取得成功，象征2026年事业顺利、目标迅速达成。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="horse-card">
+                <div class="horse-card-inner">
+                    <div class="horse-card-front">
+                        <div class="horse-icon">
+                            <i class="fas fa-horse-head"></i>
+                        </div>
+                        <h3 class="horse-title chinese-font">龙马精神</h3>
+                        <p class="horse-desc" style="color: #ffefba;">点击翻转了解更多</p>
+                    </div>
+                    <div class="horse-card-back">
+                        <h3 class="horse-title chinese-font">龙马精神</h3>
+                        <p class="horse-desc">形容人精力旺盛、斗志昂扬。龙与马的结合象征力量与速度，寓意2026年充满活力。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="horse-card">
+                <div class="horse-card-inner">
+                    <div class="horse-card-front">
+                        <div class="horse-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3 class="horse-title chinese-font">一马当先</h3>
+                        <p class="horse-desc" style="color: #ffefba;">点击翻转了解更多</p>
+                    </div>
+                    <div class="horse-card-back">
+                        <h3 class="horse-title chinese-font">一马当先</h3>
+                        <p class="horse-desc">比喻走在最前面，起带头作用。寓意2026年在竞争中脱颖而出，成为引领者。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="festival-card" style="margin-top: 30px;">
+            <h3 style="font-size: 1.8rem; color: #ffd700; margin-bottom: 15px; text-align: center; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">马在中国文化中的意义</h3>
+            <p style="font-size: 1.2rem; line-height: 1.6; text-align: center; color: #ffefba;">
+                马在中国传统文化中是能力、圣贤、人才、有作为的象征。古人常常以"千里马"来比拟人才。
+                2026年是马年，寓意着奔腾向前、积极进取的精神，象征着速度、力量和成功。
+                春节与马年结合，更添吉祥如意、马到成功的寓意。
+            </p>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn secondary" onclick="prevPage()">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <button class="festival-btn" onclick="nextPage()">
+                春节历史 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot active" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <!-- 页面4：春节历史 -->
+    <div class="page-container" id="page4">
+        <h1 class="festival-title chinese-font">春节历史</h1>
+        <p class="page-subtitle">传统节日的传承与发展</p>
+        
+        <div class="festival-timeline">
+            <div class="timeline-item">
+                <h3 class="timeline-title chinese-font">上古时期</h3>
+                <p>春节起源于上古时代的岁首祈岁祭祀，是中华民族最隆重的传统佳节，已有4000多年历史。</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="timeline-title chinese-font">夏商周时期</h3>
+                <p>夏朝以孟春元月为正月，商朝以腊月（十二月）为正月，周朝以冬月（十一月）为正月。</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="timeline-title chinese-font">秦汉时期</h3>
+                <p>秦始皇统一六国后规定以十月为正月，汉朝初期沿用秦历。汉武帝时期，颁布《太初历》，确定以正月为岁首。</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="timeline-title chinese-font">魏晋至唐</h3>
+                <p>春节习俗逐渐丰富，燃放爆竹、挂桃符、守岁等习俗开始流行，成为全民性节日。</p>
+            </div>
+            <div class="timeline-item">
+                <h3 class="timeline-title chinese-font">宋元明清</h3>
+                <p>春节习俗更加丰富多彩，贴春联、拜年、吃饺子、逛庙会等成为固定习俗，一直延续至今。</p>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn secondary" onclick="prevPage()">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <button class="festival-btn" onclick="nextPage()">
+                新年图集 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot active" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <!-- 页面5：新年图集 -->
+    <div class="page-container" id="page5">
+        <h1 class="festival-title chinese-font">新春美景</h1>
+        <p class="page-subtitle">视觉盛宴，感受浓厚春节氛围</p>
+        
+        <div class="festival-gallery">
+            <div class="gallery-item">
+                <img src="img\传统新年装饰.png" class="gallery-img" alt="春节装饰">
+                <div class="gallery-caption">传统春节装饰</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img\璀璨新年夜景.png" class="gallery-img" alt="新年夜景">
+                <div class="gallery-caption">璀璨新年夜景</div>
+            </div>
+            <div class="gallery-item">
+                <img src="img\温馨团聚.png" class="gallery-img" alt="家庭聚会">
+                <div class="gallery-caption">温馨家庭团聚</div>
+            </div>
+            
+        </div>
+        
+        <div class="festival-card" style="margin-top: 30px;">
+            <h3 style="font-size: 1.8rem; color: #ffd700; margin-bottom: 15px; text-align: center; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">春节视觉文化</h3>
+            <p style="font-size: 1.2rem; line-height: 1.6; text-align: center; color: #ffefba;">
+                红色是春节的主色调，象征喜庆和吉祥。金色代表财富和繁荣。
+                灯笼、春联、福字、窗花等传统装饰，与现代设计元素结合，
+                营造出既传统又时尚的春节氛围，让年味更加浓郁。
+            </p>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn secondary" onclick="prevPage()">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <button class="festival-btn" onclick="nextPage()">
+                新年美食 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot active" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <div class="page-container" id="page6">
+    <h1 class="festival-title chinese-font">新春美食</h1>
+    <p class="page-subtitle">舌尖上的年味，传统与创新</p>
+    
+    <div class="food-showcase">
+        <div class="food-item">
+            <!-- 替换饺子emoji为图片 -->
+            <img class="food-img" src="img\饺子.png" alt="饺子" />
+            <div class="food-name chinese-font">饺子</div>
+            <div class="food-desc">北方春节必备，象征团圆和财富</div>
+        </div>
+        
+        <div class="food-item">
+            <!-- 替换年糕emoji为图片 -->
+            <img class="food-img" src="img\年糕.png" alt="年糕" />
+            <div class="food-name chinese-font">年糕</div>
+            <div class="food-desc">南方春节必备，寓意年年高升</div>
+        </div>
+        
+        <div class="food-item">
+            <!-- 替换鱼emoji为图片 -->
+            <img class="food-img" src="img\鱼.png" alt="年年有鱼" />
+            <div class="food-name chinese-font">年年有鱼</div>
+            <div class="food-desc">年夜饭必备，象征年年有余</div>
+        </div>
+        
+        <div class="food-item">
+            <!-- 替换柑橘emoji为图片 -->
+            <img class="food-img" src="img\柑橘.png" alt="柑橘" />
+            <div class="food-name chinese-font">柑橘</div>
+            <div class="food-desc">吉祥水果，象征大吉大利</div>
+        </div>
+    </div>
+    
+    <div class="festival-card" style="margin-top: 40px; text-align: center;">
+        <h3 style="font-size: 1.8rem; color: #ffd700; margin-bottom: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">南北年味差异</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div style="text-align: center; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                <!-- 替换北方饺子emoji为图片 -->
+                <img class="diff-img" src="img\饺子.png" alt="北方饺子" />
+                <h4 style="color: #ff6b6b; margin-bottom: 10px;">北方：饺子当家</h4>
+                <p style="color: #ffefba; font-size: 1rem;">北方人过年必吃饺子，取"更岁交子"之意，象征团圆和财富。</p>
+            </div>
+            <div style="text-align: center; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                <!-- 替换南方年糕emoji为图片 -->
+                <img class="diff-img" src="img\年糕.png" alt="南方年糕" />
+                <h4 style="color: #ffd700; margin-bottom: 10px;">南方：年糕必备</h4>
+                <p style="color: #ffefba; font-size: 1rem;">南方人过年必吃年糕，寓意"年年高升"，象征步步高升。</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="nav-buttons">
+        <button class="festival-btn secondary" onclick="prevPage()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </button>
+        <button class="festival-btn" onclick="nextPage()">
+            祝福互动 <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+    
+    <div class="page-indicator">
+        <div class="page-dot" data-page="1"></div>
+        <div class="page-dot" data-page="2"></div>
+        <div class="page-dot" data-page="3"></div>
+        <div class="page-dot" data-page="4"></div>
+        <div class="page-dot" data-page="5"></div>
+        <div class="page-dot active" data-page="6"></div>
+        <div class="page-dot" data-page="7"></div>
+        <div class="page-dot" data-page="8"></div>
+        <div class="page-dot" data-page="9"></div>
+        <div class="page-dot" data-page="10"></div>
+    </div>
+</div>
+    <!-- 页面7：祝福互动 -->
+    <div class="page-container" id="page7">
+        <h1 class="festival-title chinese-font">祝福互动墙</h1>
+        <p class="page-subtitle">留下你的祝福，传递新年喜悦</p>
+        
+        <div class="blessing-input">
+            <textarea class="blessing-textarea" id="blessingInput" placeholder="写下你对2026马年的祝福..."></textarea>
+            <div style="display: flex; justify-content: space-between;">
+                <button class="festival-btn secondary" onclick="clearBlessing()">
+                    <i class="fas fa-trash"></i> 清空
+                </button>
+                <button class="festival-btn" onclick="addBlessing()">
+                    <i class="fas fa-paper-plane"></i> 发布祝福
+                </button>
+            </div>
+        </div>
+        
+        <div class="blessing-wall" id="blessingWall">
+            <!-- 祝福卡片将通过JS动态添加 -->
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn secondary" onclick="prevPage()">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <button class="festival-btn" onclick="nextPage()">
+                新年习俗 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot active" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <!-- 页面8：新年习俗 -->
+    <div class="page-container" id="page8">
+        <h1 class="festival-title chinese-font">新春习俗</h1>
+        <p class="page-subtitle">传统与现代的完美结合</p>
+        
+        <div class="festival-card">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                <div style="background: rgba(255, 215, 0, 0.15); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                    <h3 style="font-size: 1.4rem; color: #ffd700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-paint-brush"></i> 贴春联
+                    </h3>
+                    <p style="color: #ffefba;">在门上贴上红纸春联，表达对新年的美好祝愿，增添节日气氛。</p>
+                </div>
+                
+                <div style="background: rgba(255, 107, 107, 0.15); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 107, 107, 0.3);">
+                    <h3 style="font-size: 1.4rem; color: #ff6b6b; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-fire"></i> 放鞭炮
+                    </h3>
+                    <p style="color: #ffefba;">燃放鞭炮以驱赶"年"兽，增添节日喜庆气氛，象征辞旧迎新。</p>
+                </div>
+                
+                <div style="background: rgba(78, 205, 196, 0.15); padding: 20px; border-radius: 15px; border: 1px solid rgba(78, 205, 196, 0.3);">
+                    <h3 style="font-size: 1.4rem; color: #4ecdc4; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-utensils"></i> 年夜饭
+                    </h3>
+                    <p style="color: #ffefba;">除夕之夜全家团聚共享丰盛晚餐，象征团圆和家庭和睦。</p>
+                </div>
+                
+                <div style="background: rgba(253, 203, 110, 0.15); padding: 20px; border-radius: 15px; border: 1px solid rgba(253, 203, 110, 0.3);">
+                    <h3 style="font-size: 1.4rem; color: #fdcb6e; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-money-bill-wave"></i> 压岁钱
+                    </h3>
+                    <p style="color: #ffefba;">长辈给晚辈压岁钱，寓意"压住邪祟"，保佑孩子平安健康。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="festival-card" style="margin-top: 30px;">
+            <h3 style="font-size: 1.8rem; color: #ffd700; margin-bottom: 15px; text-align: center; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">现代春节新习俗</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="text-align: center; padding: 15px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">📱</div>
+                    <h4 style="color: #ffd700; margin-bottom: 10px;">电子红包</h4>
+                    <p style="color: #ffefba; font-size: 0.9rem;">通过手机发送数字红包，环保便捷，即时到账。</p>
+                </div>
+                <div style="text-align: center; padding: 15px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🎬</div>
+                    <h4 style="color: #ffd700; margin-bottom: 10px;">春节档电影</h4>
+                    <p style="color: #ffefba; font-size: 0.9rem;">全家一起观看春节档电影，成为新年新传统。</p>
+                </div>
+                <div style="text-align: center; padding: 15px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                    <div style="font-size: 2.5rem; margin-bottom: 10px;">🛒</div>
+                    <h4 style="color: #ffd700; margin-bottom: 10px;">线上年货节</h4>
+                    <p style="color: #ffefba; font-size: 0.9rem;">通过电商平台购买年货，方便快捷，选择多样。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn secondary" onclick="prevPage()">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <button class="festival-btn" onclick="nextPage()">
+                新年计划 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot active" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <!-- 页面9：新年计划 -->
+    <div class="page-container" id="page9">
+        <h1 class="festival-title chinese-font">2026新年计划</h1>
+        <p class="page-subtitle">规划你的马年目标，让梦想奔腾</p>
+        
+        <div class="festival-card" style="text-align: center;">
+            <h3 style="font-size: 1.8rem; color: #ffd700; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">制定你的马年目标</h3>
+            <div style="margin-bottom: 25px;">
+                <input type="text" id="goalInput" placeholder="输入你的2026年目标..." style="width: 80%; padding: 15px 25px; border-radius: 50px; border: 2px solid rgba(255, 215, 0, 0.5); background: rgba(255, 255, 255, 0.15); color: white; font-size: 1.2rem; backdrop-filter: blur(10px);">
+            </div>
+            <button class="festival-btn" onclick="addGoal()" style="margin-bottom: 30px;">
+                <i class="fas fa-plus"></i> 添加目标
+            </button>
+            
+            <div id="goalsList" style="text-align: left;">
+                <!-- 目标列表将通过JS动态添加 -->
+            </div>
+        </div>
+        
+        <div class="festival-card" style="margin-top: 30px;">
+            <h3 style="font-size: 1.8rem; color: #ffd700; margin-bottom: 15px; text-align: center; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">马年成功秘诀</h3>
+            <p style="font-size: 1.2rem; line-height: 1.6; text-align: center; color: #ffefba;">
+                1. 像骏马一样设定明确的目标方向<br>
+                2. 保持龙马精神，充满活力地执行计划<br>
+                3. 一马当先，勇于尝试新事物<br>
+                4. 马不停蹄，坚持不懈地追求梦想<br>
+                5. 最终实现马到成功的美好愿景
+            </p>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="festival-btn secondary" onclick="prevPage()">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <button class="festival-btn" onclick="nextPage()">
+                分享祝福 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot active" data-page="9"></div>
+            <div class="page-dot" data-page="10"></div>
+        </div>
+    </div>
+    
+    <!-- 页面10：结束页 -->
+    <div class="page-container" id="page10">
+        <h1 class="festival-title chinese-font">2026马年大吉</h1>
+        <p class="page-subtitle">十全十美，马上有福</p>
+        
+        <div class="festival-card" style="text-align: center;">
+            <div style="font-size: 1.6rem; line-height: 1.8; margin-bottom: 30px; color: #ffefba;">
+                <p>感谢体验2026马年新春互动</p>
+                <p style="color: #ffd700; font-size: 2rem; margin: 15px 0; text-shadow: 0 3px 10px rgba(0,0,0,0.3);">愿2026年带给你</p>
+                <p>健康快乐、平安幸福</p>
+                <p>事业顺利、财源广进</p>
+                <p>家庭和睦、万事如意</p>
+                <p class="chinese-font" style="margin-top: 20px; color: #ffd700; font-size: 2.2rem;">恭贺新禧，马年大吉！</p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap;">
+                <div style="font-size: 4rem;">🐎</div>
+                <div style="font-size: 4rem;">💰</div>
+                <div style="font-size: 4rem;">🎉</div>
+                <div style="font-size: 4rem;">🏮</div>
+                <div style="font-size: 4rem;">🥟</div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <h3 style="font-size: 1.6rem; color: #ffd700; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.3);">分享给你的朋友</h3>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <button class="festival-btn secondary" onclick="shareExperience('wechat')">
+                        <i class="fab fa-weixin"></i> 微信分享
+                    </button>
+                    <button class="festival-btn" onclick="shareExperience('link')">
+                        <i class="fas fa-share-alt"></i> 复制链接
+                    </button>
+                    <button class="festival-btn secondary" onclick="restartExperience()">
+                        <i class="fas fa-redo"></i> 重新体验
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-indicator">
+            <div class="page-dot" data-page="1"></div>
+            <div class="page-dot" data-page="2"></div>
+            <div class="page-dot" data-page="3"></div>
+            <div class="page-dot" data-page="4"></div>
+            <div class="page-dot" data-page="5"></div>
+            <div class="page-dot" data-page="6"></div>
+            <div class="page-dot" data-page="7"></div>
+            <div class="page-dot" data-page="8"></div>
+            <div class="page-dot" data-page="9"></div>
+            <div class="page-dot active" data-page="10"></div>
+        </div>
+    </div>
+    
+    <script>
+        // 页面数据
+        const fortunes = [
+            {
+                title: "上上签·骏马奔腾",
+                description: "2026年你将如骏马般奔腾向前，事业突破重围，创新思维引领成功。财运亨通，贵人相助，万事顺意。",
+                emoji: "🐎✨"
+            },
+            {
+                title: "上签·马到成功",
+                description: "新年伊始，好运相伴。你的计划将顺利实施，目标如期达成，收获满满。事业家庭双丰收，喜事连连。",
+                emoji: "🎯💰"
+            },
+            {
+                title: "中上签·龙马精神",
+                description: "精力充沛，创意无限。新的一年你将充满活力，在各个领域展现才华。健康平安，家庭和睦，人际关系融洽。",
+                emoji: "💪🌟"
+            },
+            {
+                title: "中签·一马当先",
+                description: "在竞争中脱颖而出，成为领域的引领者。勇敢前行，机会属于你。需保持谦虚，团结同事朋友，合作共赢。",
+                emoji: "🏆🚀"
+            },
+            {
+                title: "中签·马踏祥云",
+                description: "生活如诗如画，平安喜乐伴随。家庭和睦，人际关系融洽，幸福满满。需珍惜眼前人，把握当下幸福时光。",
+                emoji: "🌈❤️"
+            },
+            {
+                title: "中下签·老马识途",
+                description: "面对抉择时，需多听取经验丰富者的建议。稳扎稳打，方能避免不必要的失误。坚持就是胜利，耐心等待时机。",
+                emoji: "🧭⏳"
+            }
+        ];
+        
+        const defaultBlessings = [
+            { text: "愿2026年，如骏马奔腾，勇往直前，创造辉煌！", author: "吉祥如意" },
+            { text: "马年到，好运来，事业家庭双丰收！", author: "幸福安康" },
+            { text: "新时代，新气象，马年带来新希望！", author: "创新前行" },
+            { text: "祝大家2026马年大吉，心想事成！", author: "心想事成" }
+        ];
+        
+        // 全局变量
+        let currentPage = 1;
+        const totalPages = 10;
+        let envelopeOpened = false;
+        let fortuneShaken = false;
+        let blessings = [...defaultBlessings];
+        let goals = [];
+        
+        // DOM元素
+        const loader = document.getElementById('loader');
+        const festivalDecoration = document.getElementById('festivalDecoration');
+        const festivalEnvelope = document.getElementById('festivalEnvelope');
+        const moneyAmount = document.getElementById('moneyAmount');
+        const fortuneStick = document.getElementById('fortuneStick');
+        const fortuneStickText = document.getElementById('fortuneStickText');
+        const fortuneResult = document.getElementById('fortuneResult');
+        const fortuneTitle = document.getElementById('fortuneTitle');
+        const fortuneDescription = document.getElementById('fortuneDescription');
+        const fortuneEmoji = document.getElementById('fortuneEmoji');
+        const blessingInput = document.getElementById('blessingInput');
+        const blessingWall = document.getElementById('blessingWall');
+        const goalInput = document.getElementById('goalInput');
+        const goalsList = document.getElementById('goalsList');
+        
+        // 页面初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 模拟加载完成
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                createFestivalDecorations();
+                addEnvelopeListener();
+                addFortuneStickListener();
+                renderBlessings();
+                addPageIndicatorListeners();
+                renderGoals();
+                
+                // 添加烟花效果
+                createFireworks();
+            }, 2000);
+        });
+        
+        // 创建节日装饰元素
+        function createFestivalDecorations() {
+            const decorationTypes = ['lantern', 'firework', 'coin'];
+            
+            for (let i = 0; i < 20; i++) {
+                const decoration = document.createElement('div');
+                const typeIndex = Math.floor(Math.random() * decorationTypes.length);
+                const type = decorationTypes[typeIndex];
+                
+                decoration.className = `decoration-item ${type}`;
+                
+                // 随机位置
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                decoration.style.left = `${left}%`;
+                decoration.style.top = `${top}%`;
+                
+                // 随机大小
+                const size = 40 + Math.random() * 80;
+                decoration.style.width = `${size}px`;
+                decoration.style.height = `${size}px`;
+                
+                // 随机动画延迟和持续时间
+                const delay = Math.random() * 5;
+                const duration = 8 + Math.random() * 12;
+                
+                decoration.style.animationDelay = `${delay}s`;
+                decoration.style.animationDuration = `${duration}s`;
+                
+                // 特殊装饰
+                if (type === 'coin') {
+                    decoration.innerHTML = '💰';
+                    decoration.style.fontSize = `${size * 0.6}px`;
+                    decoration.style.display = 'flex';
+                    decoration.style.alignItems = 'center';
+                    decoration.style.justifyContent = 'center';
+                    decoration.style.background = 'none';
+                }
+                
+                festivalDecoration.appendChild(decoration);
+            }
+        }
+        
+        // 创建烟花效果
+        function createFireworks() {
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    createFirework();
+                }
+            }, 4000);
+        }
+        
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.style.cssText = `
+                position: fixed;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 5;
+                box-shadow: 0 0 10px currentColor;
+                color: inherit;
+                background-color: currentColor;
+            `;
+            
+            // 随机颜色
+            const colors = ['#ffd700', '#ff6b00', '#ff0000', '#ffffff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            firework.style.color = color;
+            firework.style.backgroundColor = color;
+            
+            // 随机起始位置
+            const startX = Math.random() * window.innerWidth;
+            const startY = window.innerHeight;
+            
+            firework.style.left = `${startX}px`;
+            firework.style.top = `${startY}px`;
+            
+            document.body.appendChild(firework);
+            
+            // 随机目标位置
+            const targetX = startX + (Math.random() * 200 - 100);
+            const targetY = Math.random() * window.innerHeight * 0.7;
+            
+            // 烟花上升动画
+            const riseAnimation = firework.animate([
+                { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                { transform: `translate(${targetX - startX}px, -${startY - targetY}px) scale(1.5)`, opacity: 1 }
+            ], {
+                duration: 800,
+                easing: 'ease-out'
+            });
+            
+            riseAnimation.onfinish = () => {
+                // 爆炸效果
+                explodeFirework(firework, targetX, targetY, color);
+            };
+        }
+        
+        function explodeFirework(original, x, y, color) {
+            // 移除原始烟花
+            original.remove();
+            
+            // 创建爆炸粒子
+            const particleCount = 30 + Math.floor(Math.random() * 20);
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: fixed;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 5;
+                    box-shadow: 0 0 10px currentColor;
+                    color: ${color};
+                    background-color: ${color};
+                    left: ${x}px;
+                    top: ${y}px;
+                `;
+                
+                document.body.appendChild(particle);
+                
+                // 随机方向
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 50 + Math.random() * 150;
+                const targetX = x + Math.cos(angle) * distance;
+                const targetY = y + Math.sin(angle) * distance;
+                
+                // 粒子动画
+                particle.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: `translate(${targetX - x}px, ${targetY - y}px) scale(0.2)`, opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 500,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                });
+                
+                // 移除粒子
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 1500);
+            }
+        }
+        
+        // 红包点击事件
+        function addEnvelopeListener() {
+            festivalEnvelope.addEventListener('click', function() {
+                if (!envelopeOpened) {
+                    // 添加打开类
+                    this.classList.add('open');
+                    envelopeOpened = true;
+                    
+                    // 随机金额
+                    const amounts = ['66.6', '88.8', '168', '666', '888', '1888'];
+                    const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+                    
+                    // 更新金额显示
+                    setTimeout(() => {
+                        moneyAmount.textContent = randomAmount;
+                        
+                        // 创建庆祝效果
+                        createCelebration();
+                        
+                        // 显示提示
+                        showToast(`恭喜获得${randomAmount}元红包！`, 'success');
+                    }, 500);
+                }
+            });
+        }
+        
+        // 摇签事件
+        function addFortuneStickListener() {
+            fortuneStick.addEventListener('click', function() {
+                if (!fortuneShaken) {
+                    // 添加摇晃动画
+                    this.classList.add('shaking');
+                    fortuneStickText.textContent = "摇签中...";
+                    fortuneShaken = true;
+                    
+                    // 摇晃结束后显示结果
+                    setTimeout(() => {
+                        this.classList.remove('shaking');
+                        this.classList.add('fortune-stick-out');
+                        
+                        // 随机获取运势
+                        const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+                        
+                        // 延迟显示运势结果
+                        setTimeout(() => {
+                            fortuneTitle.textContent = randomFortune.title;
+                            fortuneDescription.textContent = randomFortune.description;
+                            fortuneEmoji.textContent = randomFortune.emoji;
+                            fortuneResult.style.display = 'block';
+                            
+                            // 更新签筒上的文字
+                            fortuneStickText.textContent = randomFortune.title.split('·')[1] || randomFortune.title;
+                            
+                            // 显示提示
+                            showToast(`获得签文：${randomFortune.title}`, 'info');
+                            
+                            // 创建庆祝效果
+                            createCelebration();
+                        }, 800);
+                    }, 800);
+                }
+            });
+        }
+        
+        // 渲染祝福墙
+        function renderBlessings() {
+            blessingWall.innerHTML = '';
+            
+            blessings.forEach(blessing => {
+                const blessingCard = document.createElement('div');
+                blessingCard.className = 'blessing-card';
+                blessingCard.innerHTML = `
+                    <div class="blessing-text">${blessing.text}</div>
+                    <div class="blessing-author">— ${blessing.author}</div>
+                `;
+                
+                blessingWall.appendChild(blessingCard);
+            });
+        }
+        
+        // 添加祝福
+        function addBlessing() {
+            const text = blessingInput.value.trim();
+            
+            if (text.length === 0) {
+                showToast('请输入祝福语', 'error');
+                return;
+            }
+            
+            if (text.length > 100) {
+                showToast('祝福语不能超过100字', 'error');
+                return;
+            }
+            
+            const newBlessing = {
+                text: text,
+                author: '游客' + Math.floor(Math.random() * 1000)
+            };
+            
+            blessings.unshift(newBlessing);
+            
+            // 如果祝福太多，移除最旧的
+            if (blessings.length > 12) {
+                blessings.pop();
+            }
+            
+            // 重新渲染祝福墙
+            renderBlessings();
+            
+            // 清空输入框
+            blessingInput.value = '';
+            
+            // 显示提示
+            showToast('祝福发布成功！', 'success');
+            
+            // 创建庆祝效果
+            createCelebration();
+        }
+        
+        // 清空祝福输入
+        function clearBlessing() {
+            blessingInput.value = '';
+            showToast('已清空输入', 'info');
+        }
+        
+        // 添加目标
+        function addGoal() {
+            const goalText = goalInput.value.trim();
+            
+            if (goalText.length === 0) {
+                showToast('请输入目标内容', 'error');
+                return;
+            }
+            
+            if (goalText.length > 50) {
+                showToast('目标内容不能超过50字', 'error');
+                return;
+            }
+            
+            const newGoal = {
+                text: goalText,
+                id: Date.now(),
+                completed: false
+            };
+            
+            goals.push(newGoal);
+            
+            // 重新渲染目标列表
+            renderGoals();
+            
+            // 清空输入框
+            goalInput.value = '';
+            
+            // 显示提示
+            showToast('目标添加成功！', 'success');
+            
+            // 创建庆祝效果
+            createCelebration();
+        }
+        
+        // 渲染目标列表
+        function renderGoals() {
+            goalsList.innerHTML = '';
+            
+            if (goals.length === 0) {
+                goalsList.innerHTML = '<p style="text-align: center; color: #ffefba;">暂无目标，添加你的第一个2026年目标吧！</p>';
+                return;
+            }
+            
+            goals.forEach((goal, index) => {
+                const goalItem = document.createElement('div');
+                goalItem.style.cssText = `
+                    background: rgba(255, 255, 255, 0.1);
+                    padding: 15px;
+                    border-radius: 10px;
+                    margin-bottom: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                `;
+                
+                goalItem.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ffd700; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="toggleGoal(${goal.id})">
+                            ${goal.completed ? '<i class="fas fa-check" style="color: #ffd700;"></i>' : ''}
+                        </div>
+                        <span style="${goal.completed ? 'text-decoration: line-through; color: #ffefba;' : 'color: white;'}">${goal.text}</span>
+                    </div>
+                    <button onclick="removeGoal(${goal.id})" style="background: none; border: none; color: #ff6b6b; cursor: pointer;">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                
+                goalsList.appendChild(goalItem);
+            });
+        }
+        
+        // 切换目标完成状态
+        function toggleGoal(id) {
+            const goalIndex = goals.findIndex(goal => goal.id === id);
+            if (goalIndex !== -1) {
+                goals[goalIndex].completed = !goals[goalIndex].completed;
+                renderGoals();
+                
+                // 显示提示
+                showToast(goals[goalIndex].completed ? '目标已完成！' : '目标标记为未完成', 'info');
+                
+                // 如果完成，创建庆祝效果
+                if (goals[goalIndex].completed) {
+                    createCelebration();
+                }
+            }
+        }
+        
+        // 移除目标
+        function removeGoal(id) {
+            goals = goals.filter(goal => goal.id !== id);
+            renderGoals();
+            showToast('目标已删除', 'info');
+        }
+        
+        // 创建庆祝效果
+        function createCelebration() {
+            // 创建金色粒子效果
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.backgroundColor = '#ffd700';
+                particle.style.boxShadow = '0 0 10px #ffd700';
+                
+                // 随机大小
+                const size = Math.random() * 6 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // 随机起始位置
+                const startX = Math.random() * window.innerWidth;
+                const startY = window.innerHeight;
+                
+                particle.style.left = `${startX}px`;
+                particle.style.top = `${startY}px`;
+                
+                document.body.appendChild(particle);
+                
+                // 随机目标位置
+                const targetX = startX + (Math.random() * 200 - 100);
+                const targetY = Math.random() * window.innerHeight * 0.7;
+                
+                // 粒子向上飘散
+                const animation = particle.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: `translate(${targetX - startX}px, -${startY - targetY}px) scale(0)`, opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 500,
+                    easing: 'ease-out'
+                });
+                
+                // 移除粒子
+                animation.onfinish = () => {
+                    particle.remove();
+                };
+            }
+        }
+        
+        // 显示提示
+        function showToast(message, type) {
+            // 移除现有的提示
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) {
+                existingToast.remove();
+            }
+            
+            // 创建提示元素
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.textContent = message;
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'error' ? '#ff6b6b' : type === 'success' ? '#4ecdc4' : '#ffd700'};
+                color: ${type === 'error' ? 'white' : '#b22222'};
+                padding: 12px 24px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+                font-weight: bold;
+                border: 2px solid ${type === 'error' ? '#ff0000' : type === 'success' ? '#2e8b57' : '#b8860b'};
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // 3秒后移除提示
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+        
+        // 添加页面切换动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // 页面指示器点击事件
+        function addPageIndicatorListeners() {
+            const pageDots = document.querySelectorAll('.page-dot');
+            
+            pageDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const pageNumber = parseInt(this.getAttribute('data-page'));
+                    goToPage(pageNumber);
+                });
+            });
+        }
+        
+        // 页面导航函数
+        function nextPage() {
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        }
+        
+        function prevPage() {
+            if (currentPage > 1) {
+                goToPage(currentPage - 1);
+            }
+        }
+        
+        function goToPage(pageNumber) {
+            // 隐藏当前页面
+            const currentPageElement = document.getElementById(`page${currentPage}`);
+            currentPageElement.classList.remove('active');
+            
+            // 更新当前页面变量
+            const oldPage = currentPage;
+            currentPage = pageNumber;
+            
+            // 显示新页面
+            const newPageElement = document.getElementById(`page${currentPage}`);
+            newPageElement.classList.add('active');
+            
+            // 更新页面指示器
+            updatePageIndicator();
+            
+            // 触发页面切换事件
+            document.dispatchEvent(new CustomEvent('pageChanged', { detail: { oldPage, page: currentPage } }));
+            
+            // 滚动到顶部
+            window.scrollTo(0, 0);
+            
+            // 如果是第10页，创建庆祝效果
+            if (currentPage === 10) {
+                setTimeout(() => {
+                    createCelebration();
+                }, 500);
+            }
+        }
+        
+        // 更新页面指示器
+        function updatePageIndicator() {
+            const pageDots = document.querySelectorAll('.page-dot');
+            
+            pageDots.forEach(dot => {
+                const pageNumber = parseInt(dot.getAttribute('data-page'));
+                
+                if (pageNumber === currentPage) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // 分享体验
+        function shareExperience(platform) {
+            const shareMessage = "我发现了一个超棒的2026马年新春互动H5，快来一起体验吧！\n\n2026骏马迎春，福满人间，马上有福！";
+            
+            if (platform === 'link') {
+                // 复制到剪贴板
+                navigator.clipboard.writeText(`${shareMessage}\n${window.location.href}`)
+                    .then(() => {
+                        showToast('链接已复制到剪贴板，快去分享给朋友吧！', 'success');
+                    })
+                    .catch(() => {
+                        showToast('请手动复制链接分享给朋友：\n\n' + window.location.href, 'info');
+                    });
+            } else {
+                // 模拟微信分享
+                showToast('请使用微信"复制链接"功能分享给朋友', 'info');
+            }
+            
+            // 创建庆祝效果
+            createCelebration();
+        }
+        
+        // 重新开始体验
+        function restartExperience() {
+            // 重置状态
+            envelopeOpened = false;
+            fortuneShaken = false;
+            goals = [];
+            
+            // 重置红包
+            festivalEnvelope.classList.remove('open');
+            moneyAmount.textContent = '888';
+            
+            // 重置签筒
+            fortuneStick.classList.remove('fortune-stick-out');
+            fortuneStickText.textContent = '点击摇签';
+            fortuneResult.style.display = 'none';
+            
+            // 重置目标列表
+            goalInput.value = '';
+            
+            // 回到第一页
+            goToPage(1);
+            
+            // 创建庆祝效果
+            createCelebration();
+            
+            // 显示提示
+            showToast('重新开始体验！', 'info');
+        }
+        
+        // 添加键盘导航支持
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') {
+                nextPage();
+            } else if (event.key === 'ArrowLeft') {
+                prevPage();
+            } else if (event.key === 'Home') {
+                goToPage(1);
+            } else if (event.key === 'End') {
+                goToPage(totalPages);
+            }
+        });
+        
+        // 添加触摸滑动支持
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+        });
+        
+        document.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // 向左滑动，下一页
+                    nextPage();
+                } else {
+                    // 向右滑动，上一页
+                    prevPage();
+                }
+            }
+        }
+        
+        // 初始化祝福墙
+        renderBlessings();
+        renderGoals();
+    </script>
+</body>
+</html>
